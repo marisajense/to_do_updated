@@ -1,0 +1,23 @@
+<h1>Your To-Do Lists</h1>
+<hr />
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= list.title %> -
+      <%= link_to 'Show', list_path(list) %> -
+      <%= link_to 'Edit', edit_list_path(list) %> -
+      <%= link_to 'Delete', list_path(list), method: :delete, data: {confirm: 'Are you sure you want to delete this list?'} %>
+
+      <%= form_for list do |f| %>
+        <%= f.label :completed %>
+        <%= f.check_box :completed %>
+        <br />
+      <%= f.submit %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New To-Do List', new_list_path %>

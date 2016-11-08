@@ -1,0 +1,11 @@
+<h1> <%= @list.title %> </h1>
+<hr />
+
+
+<h6>
+  Is the list completed? <%= @list.completed ? 'Yes' : 'No' %>
+</h6>
+
+<%= link_to 'All Items', list_items_path(@list) %>
+<br />
+<%= link_to 'Back', lists_path %>

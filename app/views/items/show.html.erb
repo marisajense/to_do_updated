@@ -1,0 +1,13 @@
+<h1> <%= @item.item %> </h1>
+<hr />
+
+
+<blockquote>               <!--*******This is where I want my Items***********-->
+  <%= @item.description %>
+</blockquote>
+
+<h6>
+  Is the item completed? <%= @item.completed ? 'Yes' : 'No' %>
+</h6>
+
+<%= link_to 'Back', list_items_path %>
